@@ -1,0 +1,170 @@
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    color: #666;
+    font-size: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 1em;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input {
+  /* Basic styling */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  
+  /* Box model */
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+  /* Width and display */
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* Background and focus */
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+  opacity: 1; /* Override default opacity */
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  /* Center the form on the page */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  /* Center the form on the page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Optional: set width and padding */
+  width: 300px;  /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+  
+  /* Optional: add border and background */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  
+  /* Optional: add box shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the message box */
+.message-box {
+    background-color: #fefefe; /* Light background color */
+    color: #333; /* Dark text color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    max-width: 90%; /* Maximum width of the box */
+    width: 100%; /* Full width up to the max-width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    text-align: center; /* Center the text inside the box */
+    font-size: 1.5em; /* Bigger text size */
+    position: absolute; /* Absolute positioning for centering */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust for the width and height of the box */
+    margin: 0 auto; /* Center the box horizontally */
+}
+
+/* Styles for different types of messages */
+.message-box.info {
+    border-left: 5px solid #007bff; /* Blue left border for info messages */
+    background-color: #e7f0ff; /* Light blue background */
+    color: #007bff; /* Blue text color */
+}
+
+.message-box.success {
+    border-left: 5px solid #28a745; /* Green left border for success messages */
+    background-color: #d4edda; /* Light green background */
+    color: #28a745; /* Green text color */
+}
+
+.message-box.warning {
+    border-left: 5px solid #ffc107; /* Yellow left border for warning messages */
+    background-color: #fff3cd; /* Light yellow background */
+    color: #ffc107; /* Yellow text color */
+}
+
+.message-box.error {
+    border-left: 5px solid #dc3545; /* Red left border for error messages */
+    background-color: #f8d7da; /* Light red background */
+    color: #dc3545; /* Red text color */
+}
+
+/* Add additional styles for the message text */
+.message-box p {
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Make text bold */
+}

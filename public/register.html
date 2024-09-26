@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" href = "styles.css">
+		<title>DDoS Detection Service</title>
+	</head>
+	<body>
+		<div class = "container">
+		<form action = "/register" method = "POST" id = "myForm" enctype = "text/plain">
+			<h2>Register</h2>
+			<input type = "email" name = "email" placeholder = "Enter email" id = "email" required><br>
+			<input type = "password" name = "pswd1" placeholder = "Enter password" id = "pswd1" required><br>
+			<input type = "password" name = "pswd2" placeholder = "Confirm password" id = "pswd2" required><br>
+			<input type = "submit">
+		</form>
+		</div>
+	</body>
+</html>
+
+<script>
+function validateEmail(email) {
+	const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+	return emailPattern.test(email);
+}
+
+
+function validatePasswords(pswd1, pswd2) {
+	return pswd1 === pswd2;
+}
+
+
+function isStrongPassword(password) {
+	const minLength = 8;
+	const hasUppercase = /[A-Z]/.test(password);
+	const hasLowercase = /[a-z]/.test(password);
+	const hasNumber = /[0-9]/.test(password);
+	const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+
+	const isLongEnough = password.length >= minLength;
+	const isStrong = hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
+
+	return isLongEnough && isStrong;
+}
+
+
+
+function validateForm() {
+	const email = document.getElementById('email').value;
+	const pswd1 = document.getElementById('pswd1').value;
+	const pswd2 = document.getElementById('pswd2').value;
+
+
+	if (!validateEmail(email)) {
+		alert('Please enter a valid email address.');
+		return false;
+	}
+
+
+	if (!validatePasswords(pswd1, pswd2)) {
+		alert('Passwords do not match.');
+		return false;
+	}
+
+	if (!isStrongPassword(pswd1)) {
+		alert('Password weak.');
+		return false;
+	}
+
+	return true;
+}
+
+
+document.getElementById('myForm').addEventListener('submit', function(event) {
+	if (!validateForm()) {
+		event.preventDefault();
+	}
+});
+
+</script>
